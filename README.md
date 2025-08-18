@@ -1,12 +1,65 @@
-# React + Vite
+# Todo App (Dockerized)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Todo App built with Vite + React and containerized using Docker.
+This project demonstrates how to run a React app locally using Docker.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+* Add & manage todos
+* Built with Vite + React for fast development experience
+* Fully containerized with Docker
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/atif614/todo-app-dockerized.git
+cd todo-app-dockerized
+```
+
+### 2. Install dependencies (for local run without Docker)
+
+```bash
+npm install
+npm run dev
+```
+
+The app will be available at:
+`http://localhost:5173`
+
+---
+
+## Running with Docker
+
+### Build Docker Image
+
+```bash
+docker build -t todo-app .
+```
+
+### Run the Container
+
+```bash
+docker run -d -p 5173:5173 todo-app
+```
+
+The app will be available at:
+`http://localhost:5173`
+
+---
+
+## Docker Hub Image
+
+This project is also available on Docker Hub:
+
+```bash
+docker pull atifraza0786/todo-app:v1
+docker run -d -p 5173:5173 atifraza0786/todo-app:v1
+```
+
+---
